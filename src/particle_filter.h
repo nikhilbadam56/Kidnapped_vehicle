@@ -12,6 +12,8 @@
 #include <string>
 #include <vector>
 #include "helper_functions.h"
+#include<iostream>
+using std::cout;
 
 struct Particle {
   int id;
@@ -114,6 +116,7 @@ class ParticleFilter {
     double multiplier = 1/(2*M_PI*std_x*std_y);
     double probability = ((numer_x)/(2 * varx)) + ((numer_y)/(2 * vary));
     double exponent = exp(-probability);
+    std::cout<<"exponent"<<exponent<<std::endl;
     return multiplier*exponent;
   }
 
